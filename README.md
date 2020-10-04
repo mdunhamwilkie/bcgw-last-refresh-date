@@ -1,7 +1,7 @@
 # bcgw-last-refresh-date
-code and scripts for setting last_modified_date of BCGW resources in the BC Data Catalogue
+This repository describes code and scripts used for setting last_modified_date of BCGW resources in the BC Data Catalogue. The code and scripts themselves are stored in https://gogs.data.gov.bc.ca/datasets/edrp_app.
 ## Data Model
-The data model consists of four tables, stored in the BCGW APP_UTILITY schema.
+The data model consists of four tables and a stored procedure package, stored in the BCGW APP_UTILITY schema of the (Oracle) production BC Geographic Warehouse.
 ### Table and Column Definitions
 |Table Name|Column Name|Data Type|Nullable||Comment|
 |---|---|---|---|---|---|
@@ -36,9 +36,23 @@ The data model consists of four tables, stored in the BCGW APP_UTILITY schema.
 ||LAST_REFRESH_DATE|DATE|Yes|4|The specified last refresh date for table or view.|
 ||OBJECT_OWNER_AND_NAME|VARCHAR2(65 BYTE)|Yes|5|Object owner and name concatenated: OBJECT_OWNER || '.' || OBJECT_NAME.|
 ||LAST_REFRESH_DATE_STRING|VARCHAR2(50 BYTE)|Yes|6|LAST_REFRESH_DATE formatted as text: YYYY-MON-DD HH:MI.|
+### Stored Procedure Package
+#### EDRP_REPL_BCGW_LAST_REFRESH functions
+|Method|Description|
+|----|----|
+|get_replication_times_1_obj|table-value function which, for an input object owner and object name, returns a table of BCGW objects. Each row contains the input parameters, the owner and name of a (parent) object upon which this (child) object depends, the type of parent object (table, view, materialized view), and the last refresh dates of the child and parent objects from the all_tab_modifications, app_utility.fme_status_log, app_utility.edrp_sdr_status_vw, app_utility.mvw_overview_vw, app_utility.dwm_status_log_mvw, views/tables|
+|get_dbamod_time|get the most recent timestamp for an input object from all_tab_modifications|
+|get_fme_time|get the most recent timestamp for an input object from app_utility.fme_status_log|
+|get_fme_time_recent|get the most recent timestamp for an input object from app_utility.fme_status_log, restricted to updates happening since EDRP_REPL_REFRESH_DATES_ROLLUP was last updated|
+|get_mvw_time|get the most recent timestamp for an input object from app_utility.mvw_overview_vw|
+|get_sdr_time|get the most recent timestamp for an input object from app_utility.edrp_sdr_status_vw|
+|get_dwm_time|get the most recent timestamp for an input object from app_utility.dwm_status_log_mvw|
+|get_last_refresh_date|get the most recent of the timestamps from get_fme_time_recent() and get_replication_times_1_obj() |
 ### Data Model Diagram
 ![data model](ER%20Diagram.png)
 ## Calculation of the last_refresh_date values
+EDRP_REPL_REFRESH_DATES_ROLLUP and EDRP_REPL_REFRESH_DATE are calculated daily (see FME ETL Server schedules for exact time) using FME (repository BCGW_SCHEDULED, FMW script edrp_repl_refresh_dates_rollup_bcdc_api_bcgw.fmw) 
 ![processing flow](Processing%20Flow.png)
 ## Updating the BC Data Catalogue resource last_modified value
+This is also implemented by the same FME script as above (repository BCGW_SCHEDULED, FMW script edrp_repl_refresh_dates_rollup_bcdc_api_bcgw.fmw) 
 ![updating resource](Updating%20Resource.png)
