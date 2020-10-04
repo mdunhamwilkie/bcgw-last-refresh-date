@@ -1,6 +1,8 @@
 # bcgw-last-refresh-date
 code and scripts for setting last_modified_date of BCGW resources in the BC Data Catalogue
 ## Data Model
+The data model consists of four tables, stored in the BCGW APP_UTILITY schema.
+### Table and Column Definitions
 |Table Name|Column Name|Data Type|Nullable||Comment|
 |---|---|---|---|---|---|
 |EDRP_REPL_DATES_OVERRIDES|||||Last refresh dates for tables and views that are not replicated through the normal mechanisms (FME, SDR, Materialized Views) and thus have to be enumerated separately, e.g., TRIM_TEXT_ANNO is replicated manually through ArcMap.|
@@ -34,7 +36,7 @@ code and scripts for setting last_modified_date of BCGW resources in the BC Data
 ||LAST_REFRESH_DATE|DATE|Yes|4|The specified last refresh date for table or view.|
 ||OBJECT_OWNER_AND_NAME|VARCHAR2(65 BYTE)|Yes|5|Object owner and name concatenated: OBJECT_OWNER || '.' || OBJECT_NAME.|
 ||LAST_REFRESH_DATE_STRING|VARCHAR2(50 BYTE)|Yes|6|LAST_REFRESH_DATE formatted as text: YYYY-MON-DD HH:MI.|
-
+### Data Model Diagram
 ![data model](ER%20Diagram.png)
 ## Calculation of the last_refresh_date values
 ![processing flow](Processing%20Flow.png)
