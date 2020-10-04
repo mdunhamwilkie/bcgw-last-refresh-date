@@ -51,8 +51,10 @@ The data model consists of four tables and a stored procedure package, stored in
 ### Data Model Diagram
 ![data model](ER%20Diagram.png)
 ## Calculation of the last_refresh_date values
-EDRP_REPL_REFRESH_DATES_ROLLUP and EDRP_REPL_REFRESH_DATE are calculated daily (see FME ETL Server schedules for exact time) using FME (repository BCGW_SCHEDULED, FMW script edrp_repl_refresh_dates_rollup_bcdc_api_bcgw.fmw) 
+EDRP_REPL_REFRESH_DATES_ROLLUP and EDRP_REPL_REFRESH_DATE are calculated daily (see FME ETL Server schedules for exact time) using FME (repository BCGW_SCHEDULED, FMW script edrp_repl_refresh_dates_rollup_bcdc_api_bcgw.fmw).
+
 ![processing flow](Processing%20Flow.png)
 ## Updating the BC Data Catalogue resource last_modified value
-This is also implemented by the same FME script as above (repository BCGW_SCHEDULED, FMW script edrp_repl_refresh_dates_rollup_bcdc_api_bcgw.fmw) 
+This is also implemented by the same FME script as above (repository BCGW_SCHEDULED, FMW script edrp_repl_refresh_dates_rollup_bcdc_api_bcgw.fmw).
+
 ![updating resource](Updating%20Resource.png)
