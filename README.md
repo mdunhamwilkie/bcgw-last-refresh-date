@@ -3,6 +3,6 @@ code and scripts for setting last_modified_date of BCGW resources in the BC Data
 ## Data Model
 ![data model](ER%20Diagram.png)
 ## Calculation of the last_refresh_date values
-![processing flow]()
+![processing flow](Processing%20Flow.png)
 ## Updating the BC Data Catalogue resource last_modified value
-![updating resource]()
+![updating resource](Updating%20Resource.png)
