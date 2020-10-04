@@ -1,0 +1,27 @@
+<mxfile host="app.diagrams.net" modified="2020-10-04T02:46:08.037Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36" etag="ZUwR7KGSBi70NQZIQa1W" version="13.7.7" type="github">
+  <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
+    <mxGraphModel dx="1550" dy="713" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-2" value="" style="rounded=0;html=1;jettySize=auto;orthogonalLoop=1;fontSize=11;endArrow=block;endFill=0;endSize=8;strokeWidth=1;shadow=0;labelBackgroundColor=none;edgeStyle=orthogonalEdgeStyle;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="WIyWlLk6GJQsqaUBKTNV-3" target="5RYxtKs-X8w1mviuIVRR-5" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="220" y="170" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-3" value="For each PUBLISHED package of type GEOGRAPHIC and a non-null object_name" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="340" y="30" width="190" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="5RYxtKs-X8w1mviuIVRR-2" value="Rollup EDRP_REPL_REFRESH_DATES to populate&amp;nbsp;&lt;br&gt;EDRP_REPL_REFRESH_DATES_ROLLUP&lt;br&gt;excluding objects in EDRP_REPL_EXCLUSION_OBJS in the rollup, and using objects in EDRP_REPL_DATES_OVERRIDES to override the last refresh date if appropriate." style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="310" y="370" width="250" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="5RYxtKs-X8w1mviuIVRR-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=block;endFill=0;endSize=8;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="5RYxtKs-X8w1mviuIVRR-5" target="5RYxtKs-X8w1mviuIVRR-2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5RYxtKs-X8w1mviuIVRR-5" value="Call&amp;nbsp;&lt;br&gt;EDRP_REPL_BCGW_LAST_REFRESH.&lt;br&gt;GET_REPLICATION_TIMES_1_OBJ()&lt;br&gt;to populate EDRP_REPL_REFRESH_DATES&lt;br&gt;&lt;span style=&quot;color: rgba(0 , 0 , 0 , 0) ; font-family: monospace ; font-size: 0px&quot;&gt;%3CmxGraphModel%3E%3Croot%3E%3CmxCell%20id%3D%220%22%2F%3E%3CmxCell%20id%3D%221%22%20parent%3D%220%22%2F%3E%3CmxCell%20id%3D%222%22%20value%3D%22For%20each%20PUBLISHED%20package%20of%20type%20GEOGRAPHIC%20and%20a%20non-null%20object_name%22%20style%3D%22rounded%3D1%3BwhiteSpace%3Dwrap%3Bhtml%3D1%3BfontSize%3D12%3Bglass%3D0%3BstrokeWidth%3D1%3Bshadow%3D0%3B%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22150%22%20y%3D%22210%22%20width%3D%22190%22%20height%3D%2290%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3C%2Froot%3E%3C%2FmxGraphModel%3E&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="300" y="200" width="270" height="90" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
