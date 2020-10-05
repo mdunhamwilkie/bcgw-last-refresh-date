@@ -62,3 +62,5 @@ This is implemented by the same FME script as above (repository BCGW_SCHEDULED, 
 ## Updating the BC Data Catalogue resource last_modified value for frequently refreshed datasets - every 15 minutes (8AM-11PM)
 This is implemented by an FME script: repository BCGW_SCHEDULED, FMW script bcdc_resource_last_refresh_bcgw_sde_bcdc.fmw. It is currently scheduled to run at 6, 21, 36, 51 minutes past the hour.
 
+![15 minute updates](15minuteupdates.png)
+
